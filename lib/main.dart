@@ -47,7 +47,13 @@ class _HomeViewState extends State<HomeView> {
         values.endsWith("*");
   }
 
-  
+  bool valueContainsOperator() {
+    return values.contains('+') ||
+        values.contains('-') ||
+        values.contains('x') ||
+        values.contains('/') ||
+        values.contains('*');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -260,6 +266,9 @@ class _HomeViewState extends State<HomeView> {
                               } else if (valueEndsWithOperator()) {
                                 values += "0.";
                               } else if (!values.contains('.')) {
+                                values = values + '.';
+                              } else if (valueContainsOperator() &&
+                                  !valueEndsWithOperator()) {
                                 values = values + '.';
                               }
                             });
