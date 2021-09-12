@@ -47,18 +47,7 @@ class _HomeViewState extends State<HomeView> {
         values.endsWith("*");
   }
 
-  // resultsDisplay() {
-  //   final parser = buildParser();
-  //   final result = parser.parse(values);
-  //   if (result.isSuccess) {
-  //     setState(() {
-  //       answer = result.value.toString();
-  //     });
-  //   } else {
-  //     print(answer);
-  //     print("something went wrong");
-  //   }
-  // }
+  
 
   @override
   Widget build(BuildContext context) {
